@@ -90,8 +90,9 @@ public class EmployeesUpdateServlet extends HttpServlet {
 	         }else{
 	             em.getTransaction().begin();
 	             em.getTransaction().commit();
+	             request.getSession().setAttribute("flush", "更新が完了しました");
 	             em.close();
-	             request.getSession().setAttribute("Flush", "更新が完了しました");
+
 
 
 	             request.getSession().removeAttribute("employee_id");
